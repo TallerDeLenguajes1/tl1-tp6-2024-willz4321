@@ -84,7 +84,40 @@ class Program
             }
         }
 
-        //EJERCICIO B
+        //EJERCICIO 2 B
+
+         Console.WriteLine("Ingrese un número:");
+        string inputText = Console.ReadLine();
+
+        if (double.TryParse(inputText, out double n))
+        {
+            Console.WriteLine($"Valor absoluto: {Math.Abs(n)}");
+            Console.WriteLine($"Cuadrado: {Math.Pow(n, 2)}");
+            Console.WriteLine($"Raíz cuadrada: {Math.Sqrt(n)}");
+            Console.WriteLine($"Seno: {Math.Sin(n)}");
+            Console.WriteLine($"Coseno: {Math.Cos(n)}");
+            Console.WriteLine($"Parte entera: {Math.Truncate(n)}");
+
+            Console.WriteLine("Ingrese el primer número de la comparación:");
+            string input1 = Console.ReadLine();
+
+            Console.WriteLine("Ingrese el segundo número de la comparación:");
+            string input2 = Console.ReadLine();
+
+            if (double.TryParse(input1, out double number1) && double.TryParse(input2, out double number2))
+            {
+                Console.WriteLine($"Máximo: {Math.Max(number1, number2)}");
+                Console.WriteLine($"Mínimo: {Math.Min(number1, number2)}");
+            }
+            else
+            {
+                Console.WriteLine("Uno o ambos textos ingresados no son números válidos.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("El texto ingresado no es un número válido.");
+        }
     }
 
     static string ReverseNumber(int number)
